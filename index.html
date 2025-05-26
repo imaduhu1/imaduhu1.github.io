@@ -6,28 +6,13 @@
   <title>Innocent Maduhu</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Marquee CSS -->
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-marquee {
-      animation: marquee 40s linear infinite;
-    }
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
-  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Welcome Marquee -->
-  <div class="overflow-hidden bg-blue-600">
-    <p class="animate-marquee whitespace-nowrap text-white font-bold py-12">
-      Welcome to my website — Explore projects and insights into the risk management space
-    </p>
-  </div>
+  <marquee behavior="alternate" direction="left" scrollamount="6" scrolldelay="100" class="bg-blue-600 text-white text-xl font-bold py-2">
+    Welcome to my website — Explore projects and insights into the risk management space
+  </marquee>
 
   <!-- Hero Section -->
   <header class="min-h-screen flex flex-col items-center justify-center bg-white">
