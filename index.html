@@ -6,8 +6,28 @@
   <title>Innocent Maduhu</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Marquee CSS -->
+  <style>
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      animation: marquee 20s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
+  <!-- Welcome Marquee -->
+  <div class="overflow-hidden bg-blue-600">
+    <p class="animate-marquee whitespace-nowrap text-white font-semibold py-2">
+      Welcome to my website — Explore projects and insights into the risk management space
+    </p>
+  </div>
 
   <!-- Hero Section -->
   <header class="min-h-screen flex flex-col items-center justify-center bg-white">
