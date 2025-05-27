@@ -7,79 +7,76 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="font-sans bg-white text-gray-800">
 
-  <!-- Welcome Marquee -->
-  <marquee behavior="alternate" direction="left" scrollamount="6" scrolldelay="100" class="bg-blue-600 text-white text-5xl font-bold py-2">
-    Welcome to my website — Explore projects and insights into the risk management space
-  </marquee>
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full bg-white shadow z-10">
+  <ul class="flex justify-center space-x-8 py-4">
+    <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
+    <li><a href="#about" class="hover:text-blue-500">About Me</a></li>
+    <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+    <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+    <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero Section -->
-  <header class="min-h-screen flex flex-col items-center justify-center bg-white">
-    <h1 class="text-3xl font-bold mb-4">Innocent Maduhu</h1>
-    <p class="text-xl mb-6">Actuarial Analyst | Data Scientist | Risk Management Enthusiast</p>
-    <div class="space-x-4">
-      <a href="mailto:imaduhu1@gsu.edu" class="hover:text-blue-600">
-        imaduhu1@gsu.edu
-      </a>
-      <a href="mailto:innocentmaduhu@gmail.com" class="hover:text-blue-600">
-        innocentmaduhu@gmail.com
-      </a>
-      <a
-        href="https://www.linkedin.com/in/innocent-maduhu-71313b86"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:text-blue-600"
-      >
-        LinkedIn
-      </a>
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+  <h1 class="text-4xl font-bold mb-4">Innocent Maduhu</h1>
+  <p class="text-xl mb-6">Actuarial Analyst | Data Scientist | Risk Management Enthusiast</p>
+  <div class="space-x-4">
+    <a href="mailto:imaduhu1@gsu.edu" class="hover:text-blue-600">imaduhu1@gsu.edu</a>
+    <a href="mailto:innocentmaduhu@gmail.com" class="hover:text-blue-600">innocentmaduhu@gmail.com</a>
+    <a href="https://www.linkedin.com/in/innocent-maduhu-71313b86" target="_blank" class="hover:text-blue-600">LinkedIn</a>
+  </div>
+</section>
+
+<!-- About Me Section -->
+<section id="about" class="py-20 px-6 bg-white">
+  <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center">
+    <img src="profile.jpg" alt="Innocent Maduhu" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 object-cover" />
+    <div>
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="mb-4">Innocent Maduhu holds two master’s degrees from Georgia State University—MS in Actuarial Science (Dec 2024) and MS in Quantitative Risk Analysis and Management (May 2025)—and an MSc in Actuarial Science with distinction from BSA Crescent Institute of Science & Technology (Dec 2018). He began his journey with a Bachelor’s in Actuarial Science from the University of Dar es Salaam (Nov 2015), where he served as a Tutorial Assistant.</p>
+      <p>Driven by his passion for a career as an actuary, Innocent pursued dual master’s studies at GSU in 2023, aiming for the ASA designation by mid-2026. His internship at Reinsurance Group of America involved leveraging Advanced Excel, VBA, and Power BI to analyze, automate, and present data effectively.</p>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- About Me Section -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center">
-      <img
-        src="profile.jpg"
-        alt="Innocent Maduhu"
-        class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 object-cover"
-      />
-      <div>
-        <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-        <p class="mb-4">
-          Innocent Maduhu holds two master’s degrees from Georgia State University—MS in Actuarial Science (Dec 2024) and MS in Quantitative Risk Analysis and Management (May 2025)—and an MSc in Actuarial Science with distinction from BSA Crescent Institute of Science & Technology (Dec 2018). He began his journey with a Bachelor’s in Actuarial Science from the University of Dar es Salaam (Nov 2015), where he served as a Tutorial Assistant preparing assignments, grading exams, guiding projects, and coordinating actuarial career events.
-        </p>
-        <p>
-          Driven by his passion for a career as an actuary, Innocent pursued dual master’s studies at GSU in 2023, aiming for the ASA designation by mid-2026. His internship at Reinsurance Group of America in Chesterfield, Missouri, saw him collaborate across underwriting and pricing teams, leveraging Advanced Excel, VBA, and Power BI to analyze, automate, and present data effectively.
-        </p>
-      </div>
-    </div>
-  </section>
+<!-- Experience -->
+<section id="experience" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
+    <ul class="list-disc list-inside">
+      <li><strong>Actuarial Intern</strong> at Reinsurance Group of America (2023)</li>
+      <li><strong>Tutorial Assistant</strong> at University of Dar es Salaam (2015-2018)</li>
+    </ul>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section class="py-16 px-4 bg-gray-100">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-6">Featured Project</h2>
-      <div class="bg-white p-6 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold mb-2">PremiumPredictionFastAPI</h3>
-        <p class="mb-4">
-          An end-to-end API and UI for insurance premium prediction, built with Streamlit and utilizes a random forest model to determine the appropriate health insurance premium.
-        </p>
-        <a
-          href="https://github.com/imaduhu1/PremiumPredictionFastAPI"
-          target="_blank"
-          class="text-blue-600 hover:text-blue-800"
-        >
-          View on GitHub
-        </a>
-      </div>
-    </div>
-  </section>
+<!-- Projects -->
+<section id="projects" class="py-20 px-6 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
+    <ul class="list-disc list-inside">
+      <li><a href="https://github.com/imaduhu1/PremiumPredictionFastAPI" class="text-blue-600 hover:text-blue-800">PremiumPredictionFastAPI</a> - Streamlit UI and FastAPI backend using Random Forest model for premium prediction.</li>
+    </ul>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="py-8 text-center text-sm text-gray-600">
-    &copy; 2025 Created and Maintained by Innocent Maduhu
-  </footer>
+<!-- Contact -->
+<section id="contact" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+    <p>Email: imaduhu1@gsu.edu | innocentmaduhu@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/innocent-maduhu-71313b86" class="text-blue-500">linkedin.com/in/innocent-maduhu-71313b86</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-6 bg-gray-800 text-white text-center">
+  &copy; 2025 Innocent Maduhu. All rights reserved.
+</footer>
 
 </body>
 </html>
