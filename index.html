@@ -17,7 +17,6 @@
     <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
     <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
     <li><a href="#dashboard" class="hover:text-blue-500">Dashboard</a></li>
-    <li><a href="#dashboard" class="hover:text-blue-500">Dashboard</a></li>
     <li><a href="#medicalpremium" class="hover:text-blue-500">Medical Premium</a></li>
     <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
   </ul>
@@ -58,15 +57,54 @@
 
 <!-- Projects -->
 <section id="projects" class="py-20 px-6 bg-white">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
-    <ul class="list-disc list-inside">
-      <li><a href="https://github.com/imaduhu1/PremiumPredictionFastAPI" class="text-blue-600 hover:text-blue-800">Premium Prediction API</a> - Streamlit UI and Python backend using Random Forest model for premium prediction.</li>
-    </ul>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Premium Prediction API Card -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Premium Prediction API</h3>
+          <p class="text-gray-700 mb-4">A FastAPI backend paired with a Streamlit UI that uses a trained Random Forest model to predict health insurance premiums based on user inputs such as age, BMI, smoking status, and policy details.</p>
+          <a href="https://github.com/imaduhu1/PremiumPredictionMaduhu" target="_blank" class="text-blue-600 hover:underline mr-4">GitHub Repo</a>
+        </div>
+      </div>
+      <!-- Medical Insurance Risk Dashboard Card -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Medical Insurance Risk Dashboard</h3>
+          <p class="text-gray-700 mb-4">An interactive Streamlit dashboard visualizing medical insurance premiums and risk factors. Features include KMeans risk segmentation, age-group filters, condition‐based heatmaps, and trend analysis.</p>
+          <a href="https://github.com/imaduhu1/MedicalPremiumVisualizationMaduhu" target="_blank" class="text-blue-600 hover:underline mr-4">GitHub Repo</a>
+          <a href="https://medicalpremiumvisualizationmaduhu-koafp8hujafnq3ddxcurb3.streamlit.app/" target="_blank" class="text-blue-600 hover:underline">Live Demo</a>
+        </div>
+      </div>
+      <!-- Auto Insurance Dashboard Card -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Auto Insurance Dashboard (OH, IN, IL)</h3>
+          <p class="text-gray-700 mb-4">A Streamlit-powered dashboard displaying auto insurance claims data for Ohio, Indiana, and Illinois. Utilizes KMeans clustering to identify risk profiles and provides interactive filters by state, time period, and claim severity.</p>
+          <a href="https://github.com/imaduhu1/autoclaimsdata" target="_blank" class="text-blue-600 hover:underline mr-4">GitHub Repo</a>
+          <a href="https://autoclaimsdata-gd8ejtcjrtf7uffeeyagfj.streamlit.app/" target="_blank" class="text-blue-600 hover:underline">Live Dashboard</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Dashboard Embed Section -->$1</section>
+<!-- Dashboard Embed Section -->
+<section id="dashboard" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Interactive Claims Dashboard</h2>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        src="https://autoclaimsdata-gd8ejtcjrtf7uffeeyagfj.streamlit.app/"
+        title="Claims Clustering Dashboard"
+        class="w-full h-full border-0"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="mt-4 text-gray-600">Explore the clustering insights of insurance auto-claims in real time.</p>
+  </div>
+</section>
 
 <!-- Medical Premium Visualization Embed Section -->
 <section id="medicalpremium" class="py-20 px-6 bg-white">
@@ -93,5 +131,3 @@
 
 </body>
 </html>
-
-
