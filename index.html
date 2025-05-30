@@ -6,23 +6,55 @@
   <title>Innocent Maduhu</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fancy-title {
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      color: #007bff !important;
+      animation: moveAndFade 6s ease-in-out infinite;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    @keyframes moveAndFade {
+      0% {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+      25% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      75% {
+        transform: translateX(50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(70%);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body class="font-sans bg-white text-gray-800">
 
   <!-- Navigation Bar -->
   <nav class="fixed top-0 w-full bg-white shadow z-10">
-    <div class="w-full max-w-[800px] mx-auto">
+    <div class="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-0">
       <ul class="flex flex-wrap justify-center gap-4 py-4">
         <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
         <li><a href="#about" class="hover:text-blue-500">About Me</a></li>
         <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
         <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#dashboard" class="hover:text-blue-500">Dashboard</a></li>
+        <li><a href="#medicalpremium" class="hover:text-blue-500">Medical Premium</a></li>
         <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-   <!-- Hero Section -->
+  <!-- Hero Section -->
   <header id="hero" class="bg-white pt-16 pb-16 flex flex-col justify-center items-center">
     <div class="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-0">
       <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center">Innocent Maduhu</h1>
@@ -30,12 +62,11 @@
     </div>
   </header>
 
-   <!-- Tagline -->
-<section id="tagline" class="w-full bg-gray-50 py-12 overflow-hidden">
-  <div class="w-full max-w-[800px] mx-auto text-center">
-    <h2 class="fancy-title">Welcome To My Website</h2>
-  </div>
-
+  <!-- Tagline -->
+  <section id="tagline" class="w-full bg-gray-50 py-12 overflow-hidden">
+    <div class="w-full max-w-[800px] mx-auto text-center">
+      <h2 class="fancy-title">Welcome To My Website</h2>
+    </div>
   </section>
 
   <!-- About Me Section -->
