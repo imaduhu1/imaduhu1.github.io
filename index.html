@@ -8,38 +8,42 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-   .fancy-title {
-  font-size: 60px;
-  font-weight: bold;
-  color: #00008B;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
+    .fancy-title {
+      font-size: 60px;
+      font-weight: bold;
+      color: #00008B;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
 
-.letter {
-  display: inline-block;
-  opacity: 0;
-  animation: drop 1s ease-out forwards;
-  color: #00008B;
-}
+    .letter-word {
+      display: inline-block;
+      opacity: 0;
+      animation: drop 0.6s ease-out forwards;
+    }
 
-@keyframes drop {
-  0%   { transform: translateY(-200px); opacity: 0; }
-  80%  { transform: translateY(20px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
-}
+    .letter-word:nth-child(1) { animation-delay: 0s; }
+    .letter-word:nth-child(2) { animation-delay: 0.2s; }
+    .letter-word:nth-child(3) { animation-delay: 0.4s; }
+    .letter-word:nth-child(4) { animation-delay: 0.6s; }
 
-@media (max-width: 640px) {
-  .fancy-title {
-    font-size: 36px;
-  }
-}
- 
+    @keyframes drop {
+      0%   { transform: translateY(-100px); opacity: 0; }
+      80%  { transform: translateY(10px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 640px) {
+      .fancy-title {
+        font-size: 36px;
+      }
+    }
   </style>
 </head>
+
 <body class="font-sans bg-white text-gray-800">
 
   <!-- Navigation Bar -->
@@ -65,38 +69,20 @@
 
   <!-- Tagline -->
   <section id="tagline" class="w-full bg-gray-50 py-12 overflow-hidden">
-  <div class="w-full max-w-[800px] mx-auto text-center">
-    <h2 class="fancy-title">
-  <span class="letter" style="animation-delay: 0s;">W</span>
-  <span class="letter" style="animation-delay: 0.1s;">e</span>
-  <span class="letter" style="animation-delay: 0.2s;">l</span>
-  <span class="letter" style="animation-delay: 0.3s;">c</span>
-  <span class="letter" style="animation-delay: 0.4s;">o</span>
-  <span class="letter" style="animation-delay: 0.5s;">m</span>
-  <span class="letter" style="animation-delay: 0.6s;">e</span>
-  <!-- Just add a plain space between spans -->
-  <span class="letter" style="animation-delay: 0.7s;">t</span>
-  <span class="letter" style="animation-delay: 0.8s;">o</span>
-  <span class="letter" style="animation-delay: 0.9s;"> </span>
-  <span class="letter" style="animation-delay: 1.0s;">m</span>
-  <span class="letter" style="animation-delay: 1.1s;">y</span>
-  <span class="letter" style="animation-delay: 1.2s;"> </span>
-  <span class="letter" style="animation-delay: 1.3s;">w</span>
-  <span class="letter" style="animation-delay: 1.4s;">e</span>
-  <span class="letter" style="animation-delay: 1.5s;">b</span>
-  <span class="letter" style="animation-delay: 1.6s;">s</span>
-  <span class="letter" style="animation-delay: 1.7s;">i</span>
-  <span class="letter" style="animation-delay: 1.8s;">t</span>
-  <span class="letter" style="animation-delay: 1.9s;">e</span>
-</h2>
-
-  </div>
+    <div class="w-full max-w-[800px] mx-auto text-center">
+      <h2 class="fancy-title">
+        <span class="letter-word">Welcome&nbsp;</span>
+        <span class="letter-word">to&nbsp;</span>
+        <span class="letter-word">my&nbsp;</span>
+        <span class="letter-word">website</span>
+      </h2>
+    </div>
   </section>
 
   <!-- About Me Section -->
   <section id="about" class="py-20 px-6 bg-white">
     <div class="w-full max-w-[800px] mx-auto flex flex-col md:flex-row items-center">
-      <img src="profile.jpg" alt="Innocent Maduhu" class="w-72 h-72 mb-6 md:mb-0 md:mr-8 object-cover" />
+      <img src="profile.jpg" alt="Innocent Maduhu" class="w-full max-w-xs h-auto mb-6 md:mb-0 md:mr-8 object-cover rounded-lg" />
       <div>
         <h2 class="text-3xl font-bold mb-4">About Me</h2>
         <p class="mb-4">
@@ -111,9 +97,9 @@
     <div class="w-full max-w-[800px] mx-auto">
       <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
       <ul class="list-disc list-inside">
-        <li><strong>Research Experience</strong> at Georgia State University (2023-2025)</li>
+        <li><strong>Research Experience</strong> at Georgia State University (2023–2025)</li>
         <li><strong>Actuarial practices</strong> at Reinsurance Group of America (2024)</li>
-        <li><strong>Teaching Experience</strong> at University of Dar es Salaam (2015-2023)</li>
+        <li><strong>Teaching Experience</strong> at University of Dar es Salaam (2015–2023)</li>
       </ul>
     </div>
   </section>
@@ -127,58 +113,60 @@
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Premium Prediction API</h3>
-            <p class="text-gray-700 mb-4">A Streamlit UI paired with a Python backend that uses a trained Random Forest model to predict health insurance premiums based on user inputs such as age, BMI, smoking status, and policy details.</p>
+            <p class="text-gray-700 mb-4">A Streamlit UI paired with a Python backend that uses a trained Random Forest model to predict health insurance premiums based on user inputs.</p>
             <a href="https://premiumpredictionmaduhu-acwpryu8wy33ctvtaiqhmy.streamlit.app/" target="_blank" class="text-blue-600 hover:underline mr-4">Open in Streamlit</a>
           </div>
         </div>
+
         <!-- Medical Insurance Risk Dashboard Card -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Medical Insurance Risk Dashboard</h3>
-            <p class="text-gray-700 mb-4">An interactive Streamlit dashboard visualizing medical insurance premiums and risk factors. Features include KMeans risk segmentation, age-group filters, condition‐based heatmaps, and trend analysis.</p>
+            <p class="text-gray-700 mb-4">Interactive dashboard visualizing risk factors and insurance premiums with KMeans segmentation, filters, and heatmaps.</p>
             <a href="https://github.com/imaduhu1/MedicalPremiumVisualizationMaduhu" target="_blank" class="text-blue-600 hover:underline mr-4">GitHub Repo</a>
             <a href="https://medicalpremiumvisualizationmaduhu-koafp8hujafnq3ddxcurb3.streamlit.app/" target="_blank" class="text-blue-600 hover:underline">Live Demo</a>
           </div>
         </div>
+
         <!-- Auto Insurance Dashboard Card -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Auto Insurance Dashboard (OH, IN, IL)</h3>
-            <p class="text-gray-700 mb-4">A Streamlit-powered dashboard displaying auto insurance claims data for Ohio, Indiana, and Illinois. Utilizes KMeans clustering to identify risk profiles and provides interactive filters by state, time period, and claim severity.</p>
+            <h3 class="text-2xl font-semibold mb-2">Auto Insurance Dashboard</h3>
+            <p class="text-gray-700 mb-4">Dashboard displaying auto claims from OH, IN, IL with KMeans clustering and interactive filters by state and claim severity.</p>
             <a href="https://github.com/imaduhu1/autoclaimsdata" target="_blank" class="text-blue-600 hover:underline mr-4">GitHub Repo</a>
             <a href="https://autoclaimsdata-gd8ejtcjrtf7uffeeyagfj.streamlit.app/" target="_blank" class="text-blue-600 hover:underline">Live Dashboard</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
   <!-- Contact Me Section -->
   <section id="contact" class="py-20 bg-gray-50 px-6">
     <div class="w-full max-w-[800px] mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Contact me</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-[500px] mx-auto">
-        <!-- Email Block -->
+        <!-- Email -->
         <div>
           <div class="flex items-center mb-2">
-            <!-- envelope icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
             </svg>
             <h3 class="text-xl font-semibold">Email</h3>
           </div>
-          <a href="mailto:innocent@innocentmaduhu.com" class="text-gray-700 hover:text-blue-600 whitespace-nowrap">innocent@innocentmaduhu.com</a>
+          <a href="mailto:innocent@innocentmaduhu.com" class="text-gray-700 hover:text-blue-600">innocent@innocentmaduhu.com</a>
         </div>
-       <!-- Address Block -->
+
+        <!-- Address -->
         <div>
           <div class="flex items-center mb-2">
-            <!-- location-marker icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
             </svg>
             <h3 class="text-xl font-semibold">Address</h3>
           </div>
-          <p class="text-gray-700 whitespace-nowrap">Sandy Springs area, Atlanta, Georgia</p>
+          <p class="text-gray-700">Sandy Springs area, Atlanta, Georgia</p>
         </div>
       </div>
     </div>
@@ -190,3 +178,6 @@
       <p>&copy; 2025 Created by Innocent Maduhu. All rights reserved.</p>
     </div>
   </footer>
+
+</body>
+</html>
