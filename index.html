@@ -48,21 +48,22 @@
   }
 
   /* ✅ Slideshow Slide Style */
-  .about-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
-  }
+ .about-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
 
-  .about-slide.active {
-    opacity: 1;
-    z-index: 10;
-    transform: translateX(0%);
-  }
+.about-slide.active {
+  opacity: 1;
+  z-index: 10;
+  transform: translateX(0%);
+}
+
 
   /* ✅ Container must grow for larger screens */
   .slideshow-container {
@@ -126,7 +127,7 @@
   <section id="about" class="py-20 px-6 bg-white">
    <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8 px-4">
 <!-- Slideshow Container -->
-<div class="relative slideshow-container overflow-hidden rounded-xl mb-6 md:mb-0 md:mr-8">
+<div class="relative w-full max-w-[600px] aspect-square mx-auto slideshow-container overflow-hidden rounded-xl mb-6 md:mb-0 md:mr-8">
   <img class="about-slide" src="profile.jpg" alt="" aria-hidden="true" />
   <img class="about-slide" src="profile1.jpg" alt="" aria-hidden="true" />
   <img class="about-slide" src="profile2.jpg" alt="" aria-hidden="true" />
