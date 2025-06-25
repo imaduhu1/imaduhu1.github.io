@@ -4,23 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innocent Maduhu</title>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png" />
-<link rel="shortcut icon" href="favicon.png" type="image/png" />
-<meta name="theme-color" content="#ffffff" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     .fancy-title {
-  font-size: 60px;
-  font-weight: bold;
-  color: #00008B;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: center;
-  display: inline-block;
-}
+      font-size: 60px;
+      font-weight: bold;
+      color: #00008B;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      display: inline-block;
+    }
+
     .letter-word {
       display: inline-block;
       opacity: 0;
@@ -42,6 +45,25 @@
       .fancy-title {
         font-size: 36px;
       }
+    }
+
+    /* Slideshow Styles */
+    .about-slide {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: fade 1s ease-in-out;
+    }
+
+    .about-slide.active {
+      display: block;
+      position: relative;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.2; }
+      to   { opacity: 1; }
     }
   </style>
 </head>
@@ -84,11 +106,23 @@
   <!-- About Me Section -->
   <section id="about" class="py-20 px-6 bg-white">
     <div class="w-full max-w-[800px] mx-auto flex flex-col md:flex-row items-center">
-      <img src="profile.jpg" alt="Innocent Maduhu" class="w-full max-w-xs h-auto mb-6 md:mb-0 md:mr-8 object-cover rounded-lg" />
+      <div class="relative w-full max-w-xs h-auto mb-6 md:mb-0 md:mr-8">
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile1.jpg" alt="Slide 1" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile2.jpg" alt="Slide 2" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile3.jpg" alt="Slide 3" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile4.jpg" alt="Slide 4" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile5.jpg" alt="Slide 5" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile6.jpg" alt="Slide 6" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile7.jpg" alt="Slide 7" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile8.jpg" alt="Slide 8" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile9.jpg" alt="Slide 9" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile10.jpg" alt="Slide 10" />
+        <img class="about-slide w-full h-auto object-cover rounded-lg" src="profile11.jpg" alt="Slide 11" />
+      </div>
       <div>
         <h2 class="text-3xl font-bold mb-4">About Me</h2>
         <p class="mb-4">
-          Maduhu is a highly motivated individual currently working as a Graduate Research Assistant at Georgia State University in Atlanta, GA. Drawing on hands-on experience in actuarial work from Reinsurance Group of America, the University of Dar es Salaam, and the Institute of Finance Management, he transforms complex data into actionable insights. He holds dual Master’s degrees in Actuarial Science and Quantitative Risk Analysis & Management from Georgia State University (Atlanta, USA), a Master of Science in Actuarial Science from BSA Crescent University of Science and Technology (Chennai, India), and a Bachelor of Science in Actuarial Science from the University of Dar es Salaam (Tanzania). Innocent brings a powerful technical toolkit—including Power BI, SQL, R, Python,HTML, CSS and advanced Microsoft Excel & Word—alongside proven leadership, project management, and customer service acumen.
+          Maduhu is a highly motivated individual currently working as a Graduate Research Assistant at Georgia State University in Atlanta, GA. Drawing on hands-on experience in actuarial work from Reinsurance Group of America, the University of Dar es Salaam, and the Institute of Finance Management, he transforms complex data into actionable insights. He holds dual Master’s degrees in Actuarial Science and Quantitative Risk Analysis & Management from Georgia State University (Atlanta, USA), a Master of Science in Actuarial Science from BSA Crescent University of Science and Technology (Chennai, India), and a Bachelor of Science in Actuarial Science from the University of Dar es Salaam (Tanzania). Innocent brings a powerful technical toolkit—including Power BI, SQL, R, Python, HTML, CSS and advanced Microsoft Excel & Word—alongside proven leadership, project management, and customer service acumen.
         </p>
       </div>
     </div>
@@ -111,7 +145,6 @@
     <div class="w-full max-w-[800px] mx-auto">
       <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Premium Prediction API Card -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Premium Prediction API</h3>
@@ -119,8 +152,6 @@
             <a href="https://imaduhu1-premiumpredictionmaduhu-streamlitapp-blumdl.streamlit.app/" target="_blank" class="text-blue-600 hover:underline mr-4">Open in Streamlit</a>
           </div>
         </div>
-
-        <!-- Medical Insurance Risk Dashboard Card -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Medical Insurance Risk Dashboard</h3>
@@ -128,8 +159,6 @@
             <a href="https://medicalpremiumvisualizationmaduhu-koafp8hujafnq3ddxcurb3.streamlit.app/" target="_blank" class="text-blue-600 hover:underline">Live Demo</a>
           </div>
         </div>
-
-        <!-- Auto Insurance Dashboard Card -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Auto Insurance Dashboard</h3>
@@ -149,34 +178,29 @@
         <!-- Email -->
         <div>
           <div class="flex items-center mb-2">
-           <!-- classic envelope icon -->
-<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm0 0l8 8 8-8" />
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm0 0l8 8 8-8" />
+            </svg>
             <h3 class="text-xl font-semibold">Email</h3>
           </div>
           <a href="mailto:innocent@innocentmaduhu.com" class="text-gray-700 hover:text-blue-600">innocent@innocentmaduhu.com</a>
         </div>
 
-      <!-- Address Block -->
-<div>
-  <div class="flex items-center mb-2">
-    <!-- location-marker icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
-    </svg>
-    <h3 class="text-xl font-semibold">Address</h3>
-  </div>
-  <a 
-    href="https://www.google.com/maps/place/Sandy+Springs,+GA"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-gray-700 hover:text-blue-600 whitespace-nowrap"
-  >
-    Sandy Springs Area, Atlanta, Georgia
-  </a>
-</div>
+        <!-- Address -->
+        <div>
+          <div class="flex items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+            </svg>
+            <h3 class="text-xl font-semibold">Address</h3>
+          </div>
+          <a href="https://www.google.com/maps/place/Sandy+Springs,+GA" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 whitespace-nowrap">
+            Sandy Springs Area, Atlanta, Georgia
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -185,6 +209,24 @@
       <p>&copy; 2025 Created by Innocent Maduhu. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ✅ Slideshow JS -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".about-slide");
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+      setTimeout(showSlides, 5000); // 5-second interval
+    }
+
+    if (slides.length > 0) {
+      slides[0].classList.add("active");
+      setTimeout(showSlides, 5000);
+    }
+  </script>
 
 </body>
 </html>
