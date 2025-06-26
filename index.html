@@ -130,7 +130,17 @@
   <section id="about" class="py-16 px-6 bg-white">
    <div class="w-full mx-auto flex flex-col md:flex-row items-start gap-8 px-4">
 <!-- Slideshow Container -->
-<div class="relative w-full max-w-[500px] max-auto h-[500px] md:h-auto aspect-auto md:aspect-square slideshow-container overflow-hidden rounded-xl mb-6 md:mb-0 md:mr-8">
+<div class="relative w-full max-w-[500px] mx-auto h-[500px] md:h-auto aspect-auto md:aspect-square slideshow-container overflow-hidden rounded-xl mb-6 md:mb-0 md:mr-8">
+
+  <!-- ← Prev / Next Arrows → -->
+  <button class="prev-slide absolute top-1/2 left-4 transform -translate-y-1/2 z-20 text-2xl text-white bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center">
+    ‹
+  </button>
+  <button class="next-slide absolute top-1/2 right-4 transform -translate-y-1/2 z-20 text-2xl text-white bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center">
+    ›
+  </button>
+
+  <!-- Your slides-->
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile.jpg" alt="" aria-hidden="true" />
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile1.jpg" alt="" aria-hidden="true" />
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile2.jpg" alt="" aria-hidden="true" />
@@ -143,7 +153,9 @@
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile9.jpg" alt="" aria-hidden="true" />
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile10.jpg" alt="" aria-hidden="true" />
   <img class="about-slide w-full h-auto object-contain mx-auto" src="profile11.jpg" alt="" aria-hidden="true" />
+
 </div>
+
       <div>
         <h2 class="w-full text-3xl font-bold mb-4 text-center">About Me</h2>
         <p class="mb-4 max-w-prose mx-auto">
@@ -240,61 +252,58 @@
   let slideIndex = 0;
   const slides = document.querySelectorAll(".about-slide");
   const container = document.querySelector(".slideshow-container");
+  const prevBtn = document.querySelector(".prev-slide");
+  const nextBtn = document.querySelector(".next-slide");
   let timer;
   let isPaused = false;
 
   function showSlides() {
-    if (isPaused) return;               // do nothing if paused
+    if (isPaused) return;
     slides.forEach(s => s.classList.remove("active"));
     slideIndex = (slideIndex + 1) % slides.length;
     slides[slideIndex].classList.add("active");
-    timer = setTimeout(showSlides, 8000);
+    timer = setTimeout(showSlides, 6000);
   }
 
-  function startSlides() {
-    slides[0].classList.add("active");
-    timer = setTimeout(showSlides, 8000);
+  function resumeSlides() {
+    if (!isPaused) return;
+    isPaused = false;
+    timer = setTimeout(showSlides, 6000);
   }
 
-  // Pause on any tap/click
+  // 1) Pause on touch/click
   container.addEventListener("pointerdown", () => {
     isPaused = true;
     clearTimeout(timer);
   });
 
-  // Handle swipe gestures
-  let startX = 0;
-  const threshold = 40; // min px to count as a swipe
+  // 2) Resume when finger/mouse lifts
+  container.addEventListener("pointerup", resumeSlides);
+  container.addEventListener("pointercancel", resumeSlides);
 
-  container.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  container.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    const delta = endX - startX;
-    if (Math.abs(delta) < threshold) return;
-
-    // remove current
-    slides[slideIndex].classList.remove("active");
-
-    if (delta < 0) {
-      // swipe left → next
-      slideIndex = (slideIndex + 1) % slides.length;
-    } else {
-      // swipe right → previous
-      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    }
-
+  // 3) Prev/Next button clicks
+  prevBtn.addEventListener("click", () => {
+    clearTimeout(timer);
+    slides.forEach(s => s.classList.remove("active"));
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
     slides[slideIndex].classList.add("active");
+    if (!isPaused) timer = setTimeout(showSlides, 6000);
   });
 
-  // Kick off
+  nextBtn.addEventListener("click", () => {
+    clearTimeout(timer);
+    slides.forEach(s => s.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+    if (!isPaused) timer = setTimeout(showSlides, 6000);
+  });
+
+  // initialize
   if (slides.length > 0) {
-    startSlides();
+    slides[0].classList.add("active");
+    timer = setTimeout(showSlides, 6000);
   }
 </script>
-
 
 </body>
 </html>
