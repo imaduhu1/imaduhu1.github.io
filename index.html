@@ -56,13 +56,15 @@
   object-fit: cover;
   object-position: center top;
   opacity: 0;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateX(100%);                /* start off to the right */
+  transition: transform 1s ease-in-out,       /* 1s slide */
+              opacity 0.5s ease-in-out;       /* 0.5s fade */
 }
 
 .about-slide.active {
   opacity: 1;
   z-index: 10;
-  transform: translateX(0%);
+  transform: translateX(0);                   /* sit in place */
 }
 
   /* ✅ Container must grow for larger screens */
@@ -245,12 +247,12 @@
     slideIndex = (slideIndex + 1) % slides.length;
     slides[slideIndex].classList.add("active");
 
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 8000);
   }
 
   if (slides.length > 0) {
     slides[0].classList.add("active");
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 8000);
   }
 </script>
 
