@@ -69,6 +69,7 @@
 
   /* ✅ Container must grow for larger screens */
   .slideshow-container {
+    touch-action: pan-y; 
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -238,23 +239,62 @@
  <script>
   let slideIndex = 0;
   const slides = document.querySelectorAll(".about-slide");
+  const container = document.querySelector(".slideshow-container");
+  let timer;
+  let isPaused = false;
 
   function showSlides() {
-    slides.forEach(slide => {
-      slide.classList.remove("active");
-    });
-
+    if (isPaused) return;               // do nothing if paused
+    slides.forEach(s => s.classList.remove("active"));
     slideIndex = (slideIndex + 1) % slides.length;
     slides[slideIndex].classList.add("active");
-
-    setTimeout(showSlides, 8000);
+    timer = setTimeout(showSlides, 8000);
   }
 
-  if (slides.length > 0) {
+  function startSlides() {
     slides[0].classList.add("active");
-    setTimeout(showSlides, 8000);
+    timer = setTimeout(showSlides, 8000);
+  }
+
+  // Pause on any tap/click
+  container.addEventListener("pointerdown", () => {
+    isPaused = true;
+    clearTimeout(timer);
+  });
+
+  // Handle swipe gestures
+  let startX = 0;
+  const threshold = 40; // min px to count as a swipe
+
+  container.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const delta = endX - startX;
+    if (Math.abs(delta) < threshold) return;
+
+    // remove current
+    slides[slideIndex].classList.remove("active");
+
+    if (delta < 0) {
+      // swipe left → next
+      slideIndex = (slideIndex + 1) % slides.length;
+    } else {
+      // swipe right → previous
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    }
+
+    slides[slideIndex].classList.add("active");
+  });
+
+  // Kick off
+  if (slides.length > 0) {
+    startSlides();
   }
 </script>
+
 
 </body>
 </html>
